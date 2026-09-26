@@ -13,12 +13,12 @@ interface Iprops {
 
 const Saved = ({ workout }: Iprops) => {
 
-    const { todayplan, setTodayplan } = React.useContext(TodaySaveContext);
+    const { savedworkouts, setSavedworkouts } = React.useContext(TodaySaveContext);
 
     const handleRemoveWorkout = (id: number) => {
-        toast.success(`"${workout.name}" removed from today's plan!`);
-        const updatedPlan = todayplan.filter((workout) => workout.id !== id);
-        setTodayplan(updatedPlan);
+        toast.success(`"${workout.name}" removed from saved workouts!`);
+        const updatedPlan = savedworkouts.filter((workout) => workout.id !== id);
+        setSavedworkouts(updatedPlan);
     }
 
     

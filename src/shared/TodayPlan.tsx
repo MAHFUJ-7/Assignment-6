@@ -8,7 +8,7 @@ import { TodaySaveContext } from "@/context/provider";
 import { toast } from "react-toastify";
 
 interface Iprops {
-  workout: IWorkout;
+  workout: IWorkout & { isDone?: boolean };
 }
 
 const TodayPlan = ({ workout }: Iprops) => {
@@ -23,11 +23,11 @@ const TodayPlan = ({ workout }: Iprops) => {
 
     const handleMark = (id: number) => {
         toast.success(`"${workout.name}" marked as done!`);
-        const updatedPlan = todayplan.map((workout) => {
-            if (workout.id === id) {
-                return { ...workout, isDone: true };
+        const updatedPlan = todayplan.map((item) => {
+            if (item.id === id) {
+                return { ...item, isDone: true };
             }
-            return workout;
+            return item;
         });
         setTodayplan(updatedPlan);
     };
@@ -64,7 +64,17 @@ const TodayPlan = ({ workout }: Iprops) => {
 
       <div className="mx-5">
          <Link href={`/details/${workout.id}`} className=" text-white font-semibold px-4 py-2 rounded-[10px] mt-2 inline-block border border-[#9CA3AF] hover:bg-[#9CA3AF]">View Details</Link>
-         <button onClick={() => handleMark(workout.id)} className="bg-[#CCFF00] text-black font-semibold px-4 py-2 rounded-full mt-2 inline-block hover:bg-[#CCFF00]"> <FontAwesomeIcon icon={faCheck} />Mark as Done</button>
+         <button
+           disabled={workout.isDone}
+           onClick={() => handleMark(workout.id)}
+           className={`font-semibold px-4 py-2 rounded-full mt-2 inline-block ${
+             workout.isDone
+               ? "bg-gray-600 text-gray-300 cursor-not-allowed opacity-60"
+               : "bg-[#CCFF00] text-black hover:bg-[#CCFF00] cursor-pointer"
+           }`}
+         >
+           <FontAwesomeIcon icon={faCheck} /> {workout.isDone ? "Done" : "Mark as Done"}
+         </button>
          <button onClick={() => handleRemoveWorkout(workout.id)}><FontAwesomeIcon icon={faX} /></button>
 
       </div>
