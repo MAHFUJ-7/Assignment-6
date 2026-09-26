@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const tabs = [
-  { href: "/", label: "Workouts" },
+  { href: "/", label: "Workout" },
   { href: "/my-plan", label: "My Plan" },
 ];
 
@@ -15,10 +15,7 @@ const NavTabs = () => {
   return (
     <div role="tablist" aria-label="Navigation Tabs" className="flex gap-2">
       {tabs.map((tab) => {
-        const isActive =
-          tab.href === "/workouts"
-            ? pathname === "/workouts" || pathname === "/"
-            : pathname === tab.href;
+        const isActive = pathname === tab.href;
 
         return (
           <Link
@@ -28,8 +25,8 @@ const NavTabs = () => {
             aria-selected={isActive}
             className={
               isActive
-                ? "bg-[#1A2312] text-[#C2F800] px-8 py-2 rounded-3xl cursor-pointer font-semibold"
-                : "text-[#9CA3AF] px-8 py-2 rounded-3xl cursor-pointer font-semibold"
+                ? "bg-[#1A2312] text-[#C2F800] px-4 sm:px-8 py-1.5 sm:py-2 rounded-3xl cursor-pointer font-semibold text-xs sm:text-base transition-colors"
+                : "text-[#9CA3AF] px-4 sm:px-8 py-1.5 sm:py-2 rounded-3xl cursor-pointer font-semibold text-xs sm:text-base transition-colors hover:text-white"
             }
           >
             {tab.label}

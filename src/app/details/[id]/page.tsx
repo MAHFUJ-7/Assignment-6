@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 async function getWorkout(id: string): Promise<IWorkout | null> {
-  const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+  const response = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`);
 
   if (!response.ok) {
     return null;
@@ -39,19 +39,20 @@ const Page = async ({ params }: PageProps) => {
   ];
 
   return (
-    <div className="container mx-auto bg-[#000000] p-5 flex flex-col lg:flex-row items-start gap-6">
-      <div className="w-full lg:w-auto shrink-0">
+    <div className="container mx-auto bg-[#000000] p-3 sm:p-5 flex flex-col lg:flex-row items-start gap-6">
+      <div className="w-full lg:w-auto shrink-0 flex justify-center">
         <Image
           src={data.image}
           alt={data.name}
           width={500}
           height={520}
-          className="w-full lg:w-125 h-100 lg:h-130 object-cover rounded-[10px]"
+          priority
+          className="w-full lg:w-[480px] h-[280px] sm:h-[400px] lg:h-[520px] object-cover rounded-[10px]"
         />
       </div>
 
-      <div className="px-4 py-3 flex-1">
-        <h1 className="text-white text-3xl font-bold mt-2">{data.name}</h1>
+      <div className="px-1 sm:px-4 py-3 flex-1 w-full">
+        <h1 className="text-white text-2xl sm:text-3xl font-bold mt-2">{data.name}</h1>
         <p className="text-[#9CA3AF]">{data.description}</p>
 
         <div className="flex gap-3 mt-3">

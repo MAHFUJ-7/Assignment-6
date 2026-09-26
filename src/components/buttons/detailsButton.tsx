@@ -25,7 +25,7 @@ const DetailsButton =  ({ data }: DetailsButtonProps) => {
       return;
     }
     setTodayplan([...todayplan, data]);
-    toast.success(' added to today\'s plan!')
+    toast.success(' "$data.name" added to today\'s plan!')
   }
 
   const handleSaveForLater = () => {
@@ -34,11 +34,9 @@ const DetailsButton =  ({ data }: DetailsButtonProps) => {
       return;
     }
     setSavedworkouts([...savedworkouts, data]);
-    toast.success(' saved for later!')
+    toast.success(' "$data.name" saved for later!')
   }
 
-  console.log(todayplan, "todayplan");
-  console.log(savedworkouts, "savedworkouts");
   return (
     
     <div className="flex gap-5 mt-5">
