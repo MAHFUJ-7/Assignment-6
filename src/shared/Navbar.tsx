@@ -2,6 +2,7 @@ import React from "react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import NavTabs from "./navtabs";
+import Link from "next/dist/client/link";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
             alt="Logo"
             width={30}
             height={30}
-            className="w-[25px] h-[25px] text-center"
+            className="w-6.25 h-6.25 text-center"
           />
           <h1 className="text-white text-2xl font-bold">FITLOG</h1>
         </div>
@@ -22,7 +23,7 @@ const Navbar = () => {
 
         <div className="flex gap-8 items-center">
             <div>
-                <h1>Plan <span className="bg-[#C2F800] text-black text-sm font-bold px-2 py-1 mx-1 rounded-full">0</span></h1>
+                <Link href="/myplan">Plan <span className="bg-[#C2F800] text-black text-sm font-bold px-2 py-1 mx-1 rounded-full">0</span></Link>
             </div>
             <div className="text-[#9CA3AF]">
                 <h1>Saved <span className="text-[#9CA3AF] text-sm font-bold px-2 py-1 mx-1 rounded-full border border-[#2D313B] ">1</span></h1>

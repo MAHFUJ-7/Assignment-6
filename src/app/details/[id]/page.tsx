@@ -46,7 +46,7 @@ const Page = async ({ params }: PageProps) => {
           alt={data.name}
           width={500}
           height={520}
-          className="w-full lg:w-[500px] h-[400px] lg:h-[520px] object-cover rounded-[10px]"
+          className="w-full lg:w-125 h-100 lg:h-130 object-cover rounded-[10px]"
         />
       </div>
 

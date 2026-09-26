@@ -11,7 +11,7 @@ export default async function library() {
         <p className="text-[#9CA3AF] ">Twelve lifts covering every major muscle group.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-5 mb-5 container mx-auto">
             {
                 data.map((prop: IWorkout, index: number) => {
                     return <Card props={prop} key={index} />

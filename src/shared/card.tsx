@@ -13,7 +13,7 @@ const Card = ({ props }: CardProps) => {
   return (
     <Link
       href={`/details/${props.id}`}
-      className="block rounded-[20px] overflow-hidden bg-[#20242E] transition-transform hover:scale-[1.02]"
+      className="block rounded-[20px] overflow-hidden bg-[#20242E] hover:scale-105 transition-transform duration-300"
     >
       <div className="relative w-full aspect-3/2">
         <Image
