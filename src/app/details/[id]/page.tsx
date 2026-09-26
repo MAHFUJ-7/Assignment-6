@@ -89,7 +89,7 @@ const Page = async ({ params }: PageProps) => {
         </div>
 
         <div className="mt-4">
-          <DetailsButton />
+          <DetailsButton data={data} />
         </div>
       </div>
     </div>
