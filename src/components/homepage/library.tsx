@@ -5,7 +5,7 @@ import Card from '@/shared/card'
 export default async function library() {
     const data = await allData();
   return (
-    <div className="container mx-auto mt-3">
+    <div className="container mx-auto ">
       <div>
         <h1 className="text-white text-3xl font-bold">THE LIBRARY</h1>
         <p className="text-[#9CA3AF] ">Twelve lifts covering every major muscle group.</p>

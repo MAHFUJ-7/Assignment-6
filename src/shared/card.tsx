@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IWorkout } from "@/type/type";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faStar } from "@fortawesome/free-regular-svg-icons";
@@ -10,7 +11,10 @@ interface CardProps {
 
 const Card = ({ props }: CardProps) => {
   return (
-    <div className="rounded-[20px] overflow-hidden bg-[#20242E]">
+    <Link
+      href={`/details/${props.id}`}
+      className="block rounded-[20px] overflow-hidden bg-[#20242E] transition-transform hover:scale-[1.02]"
+    >
       <div className="relative w-full aspect-3/2">
         <Image
           src={props.image}
@@ -59,7 +63,7 @@ const Card = ({ props }: CardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
