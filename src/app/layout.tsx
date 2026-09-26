@@ -6,6 +6,8 @@ import { Inter } from "next/font/google";
 import { Oswald } from "next/font/google";
 import Provider from "@/context/provider";
 import Footer from "@/shared/Footer";
+import ToastProvider from "@/components/ToastProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 const oswald = Oswald({ subsets: ["latin"] });
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Provider>
+          <ToastProvider />
           <Navbar />
           {children}
           <Footer />
