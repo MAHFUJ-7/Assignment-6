@@ -4,6 +4,7 @@ import TodayPlan from "@/shared/TodayPlan";
 import { IWorkout } from "@/type/type";
 import { TodaySaveContext } from "@/context/provider";
 import Empty from "@/shared/Empty";
+import Saved from "@/shared/saved";
 
 const Page = () => {
   const { todayplan, savedworkouts } = React.useContext(TodaySaveContext);
@@ -62,7 +63,7 @@ const Page = () => {
           <div className="tab-content border-base-300 bg-base-100 p-10">
             {savedworkouts.length > 0 ? (
               savedworkouts.map((workout: IWorkout, index: number) => (
-                <TodayPlan key={index} workout={workout} />
+                <Saved key={index} workout={workout} />
               ))
             ) : (
               <Empty></Empty>
